@@ -1,0 +1,68 @@
+Public Function GenerateRTF(ByVal xmlString As String, ByVal sDate As String, ByVal nTellerNo As String) As String
+    'Start of IR 24070056
+    LogWriterCheck("------------- Start of Calling  Service GenerateRTF : " + " at " + DateTime.Now.ToString())
+    'End of IR 24070056
+    Dim node As XmlNode = Nothing
+    Dim a As New TCSRTFMerge.TCSRTFMerge()
+    'Start of IR 261345
+    'Decrypting
+    Dim StrKey As String = CallKey()
+    'Start of IR 24070056
+    LogWriterCheck("Start passwordDecrypt " + " at " + DateTime.Now.ToString())
+    'End of IR 24070056
+    xmlString = passwordDecrypt(xmlString, StrKey)
+    'Start of IR 24070056
+    LogWriterCheck("End passwordDecrypt " + " at " + DateTime.Now.ToString())
+    'End of IR 24070056
+    'Decrypting
+    'End of IR 261345
+    Dim inComponentDocs As New FNS.FrontEnd.Workflow.Server.FlowDistributorTypes.CFNSComponentDocuments()
+    'Start of IR 20090073
+    'inComponentDocs.LoadXml(xmlString)
+    Dim output_Byte() As Byte = New System.Text.UTF8Encoding().GetBytes(xmlString)
+    Dim output_MS As New System.IO.MemoryStream(output_Byte)
+    Dim goodSettingsws As XmlReaderSettings = New XmlReaderSettings()
+    goodSettingsws.DtdProcessing = DtdProcessing.Ignore
+    goodSettingsws.XmlResolver = Nothing
+    goodSettingsws.ValidationType = ValidationType.Schema
+    goodSettingsws.Schemas = New XmlSchemaSet()
+    goodSettingsws.MaxCharactersFromEntities = 1024
+    goodSettingsws.IgnoreComments = True
+    Dim goodxmlreadws As XmlReader = XmlReader.Create(output_MS, goodSettingsws)
+    inComponentDocs.Load(goodxmlreadws)
+    goodxmlreadws.Close()
+    'End of IR 20090073
+
+    Dim inXmlDocument As New XmlDocument()
+    'Start of IR 20090073
+    'inXmlDocument.LoadXml(xmlString)
+    Dim output_Byte1() As Byte = New System.Text.UTF8Encoding().GetBytes(xmlString)
+    Dim output_MS1 As New System.IO.MemoryStream(output_Byte)
+    Dim goodSettingsws1 As XmlReaderSettings = New XmlReaderSettings()
+    goodSettingsws1.DtdProcessing = DtdProcessing.Ignore
+    goodSettingsws1.XmlResolver = Nothing
+    goodSettingsws1.ValidationType = ValidationType.Schema
+    goodSettingsws1.Schemas = New XmlSchemaSet()
+    goodSettingsws1.MaxCharactersFromEntities = 1024
+    goodSettingsws1.IgnoreComments = True
+    Dim goodxmlreadws1 As XmlReader = XmlReader.Create(output_MS1, goodSettingsws1)
+    inXmlDocument.Load(goodxmlreadws1)
+    goodxmlreadws1.Close()
+    'End of IR 20090073
+    node = a.RTFRemoteMerge(inComponentDocs.ComponentDocument(0), sDate, nTellerNo)
+    'Start of IR 261345
+    'Encrypting
+    'Start of IR 24070056
+    LogWriterCheck("Start passwordEncrypt " + " at " + DateTime.Now.ToString())
+    'End of IR 24070056
+    node.InnerXml = passwordEncrypt(Convert.ToString(node.InnerXml), StrKey)
+    'Start of IR 24070056
+    LogWriterCheck("End passwordEncrypt " + " at " + DateTime.Now.ToString())
+    'End of IR 24070056
+    'Encrypting
+    'End of IR 261345
+    'Start of IR 24070056
+    LogWriterCheck("------------- End of Calling  Service GenerateRTF: " + " at " + DateTime.Now.ToString())
+    'End of IR 24070056
+    Return node.InnerXml
+End Function
