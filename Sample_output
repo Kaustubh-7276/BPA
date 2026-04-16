@@ -1,0 +1,58 @@
+2026-04-16 15:52:53.932 [INFO] ----- GenerateRTF START ----- 4/16/2026 3:52:53 PM
+2026-04-16 15:52:53.939 [INFO] Decrypt start
+2026-04-16 15:52:53.982 [INFO] Decrypt end
+2026-04-16 15:52:53.999 [INFO] RTFRemoteMerge started
+2026-04-16 15:52:54.011 [INFO] RTF Merge iteration started
+2026-04-16 15:52:54.578 [INFO] Generated page: Online Statement   : Page 1
+2026-04-16 15:52:54.586 [INFO] RTF Merge iteration started
+2026-04-16 15:52:55.003 [INFO] Generated page: Online Statement   : Page 2
+2026-04-16 15:52:55.010 [INFO] RTF Merge iteration started
+2026-04-16 15:52:55.564 [INFO] Generated page: Online Statement   : Page 3
+2026-04-16 15:52:55.573 [INFO] RTF Merge iteration started
+2026-04-16 15:52:55.997 [INFO] Generated page: Online Statement   : Page 4
+2026-04-16 15:52:56.006 [INFO] RTF Merge iteration started
+2026-04-16 15:52:56.600 [INFO] Generated page: Online Statement   : Page 5
+2026-04-16 15:52:56.605 [INFO] RTF Merge iteration started
+2026-04-16 15:52:57.353 [INFO] Generated page: Online Statement   : Page 6
+2026-04-16 15:52:57.360 [INFO] RTF Merge iteration started
+2026-04-16 15:52:57.787 [INFO] RTF Merge completed
+2026-04-16 15:52:57.795 [INFO] returnNode: 
+<printDocument><fileName>E:\BranchPrintingService\bin\RTFTEMP\xratwfxx.rtf</fileName><title>Online Statement   : Page 1</title><LineNo>36</LineNo></printDocument><printDocument><fileName>E:\BranchPrintingService\bin\RTFTEMP\s0ew4ybr.rtf</fileName><title>Online Statement   : Page 2</title><LineNo>36</LineNo></printDocument><printDocument><fileName>E:\BranchPrintingService\bin\RTFTEMP\zn0xq4ud.rtf</fileName><title>Online Statement   : Page 3</title><LineNo>36</LineNo></printDocument><printDocument><fileName>E:\BranchPrintingService\bin\RTFTEMP\5kgm3owc.rtf</fileName><title>Online Statement   : Page 4</title><LineNo>36</LineNo></printDocument><printDocument><fileName>E:\BranchPrintingService\bin\RTFTEMP\djcbsavd.rtf</fileName><title>Online Statement   : Page 5</title><LineNo>36</LineNo></printDocument><printDocument><fileName>E:\BranchPrintingService\bin\RTFTEMP\u44xupyg.rtf</fileName><title>Online Statement   : Page 6</title><LineNo>32</LineNo></printDocument>
+2026-04-16 15:52:57.805 [INFO] Encrypt start
+2026-04-16 15:52:57.825 [INFO] Encrypt end
+2026-04-16 15:52:57.833 [INFO] ----- GenerateRTF END -----
+
+VB Output:
+
+<printDocument>
+    <fileName>E:\BPA\RTFTEMP\dfw23otz.rtf</fileName>
+    <title>Online Statement   : Page 1</title>
+    <LineNo>36</LineNo>
+</printDocument>
+<printDocument>
+    <fileName>E:\BPA\RTFTEMP\wdsinwpy.rtf</fileName>
+    <title>Online Statement   : Page 2</title>
+    <LineNo>36</LineNo>
+</printDocument>
+<printDocument>
+    <fileName>E:\BPA\RTFTEMP\31b5lhxc.rtf</fileName>
+    <title>Online Statement   : Page 3</title>
+    <LineNo>36</LineNo>
+</printDocument>
+<printDocument>
+    <fileName>E:\BPA\RTFTEMP\hynipw0i.rtf</fileName>
+    <title>Online Statement   : Page 4</title>
+    <LineNo>36</LineNo>
+</printDocument>
+<printDocument>
+    <fileName>E:\BPA\RTFTEMP\wfp4b1lj.rtf</fileName>
+    <title>Online Statement   : Page 5</title>
+    <LineNo>36</LineNo>
+</printDocument>
+<printDocument>
+    <fileName>E:\BPA\RTFTEMP\cv3d1nsv.rtf</fileName>
+    <title>Online Statement   : Page 6</title>
+    <LineNo>32</LineNo>
+</printDocument>
+
+
